@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.3.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
+
+<script class="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.sunhaohao.com","root":"/","images":"/images","scheme":"Pisces","version":"8.2.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"}};
+  </script>
+<meta name="description" content="最近陈皓大佬来公司做了一次分享：《我这技术 20 年 —— 一个中年程序员的经历》，毫无疑问这位前辈许多经验是值得学习和借鉴的。因此将公司整理的分享内容摘抄在此，已被查阅。同时这里把个人介绍部分隐去，仅就具备泛用性的经验总结做记录。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="摘抄分享：陈皓的技术 20 年">
+<meta property="og:url" content="http://www.sunhaohao.com/tech/share-chenhaos-20-years.html">
+<meta property="og:site_name" content="Haohao&#39;s Home">
+<meta property="og:description" content="最近陈皓大佬来公司做了一次分享：《我这技术 20 年 —— 一个中年程序员的经历》，毫无疑问这位前辈许多经验是值得学习和借鉴的。因此将公司整理的分享内容摘抄在此，已被查阅。同时这里把个人介绍部分隐去，仅就具备泛用性的经验总结做记录。">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://www.sunhaohao.com/images/learning-pyramid.png">
+<meta property="og:image" content="http://www.sunhaohao.com/images/capability-transform-model.png">
+<meta property="og:image" content="http://www.sunhaohao.com/images/procedure-of-thinking.png">
+<meta property="og:image" content="http://www.sunhaohao.com/images/thinking-model-nowadays.png">
+<meta property="article:published_time" content="2021-02-01T02:41:14.000Z">
+<meta property="article:modified_time" content="2021-02-01T03:11:25.124Z">
+<meta property="article:author" content="Sun Haohao">
+<meta property="article:tag" content="share">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://www.sunhaohao.com/images/learning-pyramid.png">
+
+
+<link rel="canonical" href="http://www.sunhaohao.com/tech/share-chenhaos-20-years.html">
+
+
+<script class="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+<title>摘抄分享：陈皓的技术 20 年 | Haohao's Home</title>
+  
+
+
+
+
+  <noscript>
+  <style>
+  body { margin-top: 2rem; }
+
+  .use-motion .menu-item,
+  .use-motion .sidebar,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header {
+    visibility: visible;
+  }
+
+  .use-motion .header,
+  .use-motion .site-brand-container .toggle,
+  .use-motion .footer { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle,
+  .use-motion .custom-logo-image {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line {
+    transform: scaleX(1);
+  }
+
+  .search-pop-overlay, .sidebar-nav { display: none; }
+  .sidebar-panel { display: block; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <h1 class="site-title">Haohao's Home</h1>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">什么乱七八糟的都在这里...</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%88%90%E9%95%BF%E4%B8%AD%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BF%83%E5%BE%97"><span class="nav-number">1.</span> <span class="nav-text">成长中的一些心得</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%86%E5%AF%BC%E5%8A%9B%E6%A8%A1%E5%9E%8B"><span class="nav-number">2.</span> <span class="nav-text">领导力模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B"><span class="nav-number">3.</span> <span class="nav-text">学习模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E7%BB%B4%E6%A8%A1%E5%9E%8B"><span class="nav-number">4.</span> <span class="nav-text">思维模型</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Sun Haohao</p>
+  <div class="site-description" itemprop="description">USTC Baidu ByteDance viRingbells@qq.com</div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">3</span>
+        <span class="site-state-item-name">categories</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://www.sunhaohao.com/tech/share-chenhaos-20-years.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Sun Haohao">
+      <meta itemprop="description" content="USTC Baidu ByteDance viRingbells@qq.com">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Haohao's Home">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          摘抄分享：陈皓的技术 20 年
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+      
+
+      <time title="Created: 2021-02-01 10:41:14 / Modified: 11:11:25" itemprop="dateCreated datePublished" datetime="2021-02-01T10:41:14+08:00">2021-02-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">In</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/tech/" itemprop="url" rel="index"><span itemprop="name">tech</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <blockquote>
+<p>最近陈皓大佬来公司做了一次分享：《我这技术 20 年 —— 一个中年程序员的经历》，毫无疑问这位前辈许多经验是值得学习和借鉴的。因此将公司整理的分享内容摘抄在此，已被查阅。<br>同时这里把个人介绍部分隐去，仅就具备泛用性的经验总结做记录。</p>
+</blockquote>
+<a id="more"></a>
+
+<h2 id="成长中的一些心得"><a href="#成长中的一些心得" class="headerlink" title="成长中的一些心得"></a>成长中的一些心得</h2><ol>
+<li>黄金学习期（20-30岁）</li>
+</ol>
+<ul>
+<li>这是努力学习的时间段，你一定要把时间花在解决问题的技能上。 </li>
+<li>一定要练就成的技能是：你能解决大多数人不能解决的问题。 </li>
+<li>使蛮力埋头加班苦干，当一个搬砖老黄牛的是肯定没有前途的。 </li>
+</ul>
+<ol start="2">
+<li>黄金事业成长期（30-40岁）</li>
+</ol>
+<ul>
+<li>整个社会是会把最重要的工作交给30岁左右的这群人的。 </li>
+<li>30岁-35岁左右这群人是这个社会的做事的中坚力量。 </li>
+<li>如果你赶上了，事业会发展的很好。赶不上就要中年危机了 </li>
+</ul>
+<ol start="3">
+<li>两个重要的能力</li>
+</ol>
+<ul>
+<li>高效的学习能力：<ul>
+<li>这意味着——你要高效的学习能力、见过很多的场景、犯过或是处理很多错误，有实战经验，能够防火而不是救火。 解决难题的能力 </li>
+<li>这意味着——基础知识扎实、触类旁通、读英文文档不费劲、有寻找前沿知识的能力、能够看到问题和技术的本质、善于思辩、 能独立思考</li>
+</ul>
+</li>
+<li>解决难题的能力<ul>
+<li>这意味着——你要高效的学习能力、见过很多的场景、犯过或是处理很多错误，有实战经验，能够防火而不是救火。 </li>
+</ul>
+</li>
+</ul>
+<ol start="4">
+<li>两个重要的标志 </li>
+</ol>
+<ul>
+<li>帮人解问题：<ul>
+<li>团队或身边中大多数人都在问： “这问题怎么办？”，而总是你能站出来告诉大家这事该怎么办？ </li>
+</ul>
+</li>
+<li>被人所依赖 <ul>
+<li>团队或身边中大多数人在做比较关键的决定时，都会来找你咨询你的意见和想法。 </li>
+</ul>
+</li>
+</ul>
+<ol start="5">
+<li>三条路</li>
+</ol>
+<ul>
+<li>职场：顶尖技术公司 （视野，层级，发展） ；上升期创业公司 （空间，成长，回报） </li>
+<li>经历：与众不同的经历；最前沿最刺激的经历</li>
+<li>自由：工作自由；技能自由 ；物质自由</li>
+</ul>
+<ol start="6">
+<li>认识世界和自己</li>
+</ol>
+<ul>
+<li>世界需要什么样的技术人员 <ul>
+<li>技工：能使用的操作技术并能按时出活，做得越快越多</li>
+<li>工程师：了解原理能解决难题，自动化和规模化，降低工程成本提升效率 </li>
+<li>专家：有探路能力；贡献更好更优的方法；能够创新和简化；能够提高标准；标准化和抽象</li>
+<li>领导者：创造价值和利润；吸引人才和资源；组织并带动团队；提升整体效率；感知变化和潮流；抓重点，洞悉本质</li>
+</ul>
+</li>
+<li>Google 评分卡<br>Google评分卡可以分为四档：0<del>2是一档；3</del>5是二挡；6<del>8是三档；9</del>10是四挡。<ol start="0">
+<li>对于相关的技术领域还不熟悉；</li>
+<li>可以读懂这个领域的基础知识；</li>
+<li>可以实现一些小的改动，清楚基本的原理，并能够在简单的指导下自己找到更多的细节。</li>
+<li>基本精通这个技术领域，完全不需要别人的帮助</li>
+<li>对这个技术领域非常的熟悉和舒适，可以应对和完成所有的日常工作  </li>
+</ol>
+<ul>
+<li>对于软件领域：有能力开发中等规模的程序，能够熟练和掌握并使用所有的语言特性，而不是需要翻书，并且能够找到所有的冷知识；  </li>
+<li>对于系统领域：掌握网络和系统管理的很多基础知识，并能够掌握一些内核知识以运维一个小型的网络系统，包括恢复、调试和能解决一些不常见的故障。</li>
+</ul>
+<ol start="5">
+<li>对于该技术领域有非常底层的了解和深入的技能。</li>
+<li>能够从零开发大规模的程序和系统，掌握底层和内在原理，能够设计和部署大规模的分布式系统架构。</li>
+<li>理解并能利用高级技术，以及相关的内在原理，并可以从根本上自动化大量的系统管理和运维工作。</li>
+<li>对于一些边角和晦涩的技术、协议和系统工作原理有很深入的理解和经验。能够设计、部署并负责非常关键以及规模很大的基础设施，并能够构建相应的自动化设施。</li>
+<li>能够在该技术领域出一本经典的书，并和标准委员会的人一起工作制定相关的技术标准和方法。</li>
+<li>在该领域写过一本书，被业内尊为专家，并是该技术的发明人。</li>
+</ol>
+</li>
+</ul>
+<ol start="7">
+<li>找到自己的优势</li>
+</ol>
+<ul>
+<li>特长：找到自己的特长和天赋；找到自己可以干成的事；找到别人会来请教你的事。</li>
+<li>兴趣：找到自己非常着迷的事；找到有多困难都不放弃的事</li>
+<li>方法：有时间观念、会做计划，不磨蹭，懂统筹规划；对做过的事，犯过的错会总结归纳，有举一反三的习惯；喜欢自己找答案，自己探究事物的因果关系</li>
+<li>环境：找到一个适合的环境，有不错的硬件条件，有上进的队友，有高手带你</li>
+<li>勤奋：注定是个比较劳累的人，只要能勤奋那还是能立足</li>
+</ul>
+<h2 id="领导力模型"><a href="#领导力模型" class="headerlink" title="领导力模型"></a>领导力模型</h2><ol>
+<li>所谓领导力不是职位，不是头衔，更不是称号。而是—— </li>
+</ol>
+<ul>
+<li>别人有问题会来请你帮助听你建议的一种现象。 </li>
+<li>别人由心里愿意跟随你，愿意听你指教的一种现象。 </li>
+<li>别人学习你、参照你、模仿你的一种现象</li>
+</ul>
+<ol start="2">
+<li>领导力模型 </li>
+</ol>
+<ul>
+<li>标准高：坚持高标准，不妥协；有工匠精神，对事物有品味；总是能够找到地方不断优化 </li>
+<li>解难题：分析的拆解问题的能力；能够比较并找到普适的方案；能够把方案执行落地 </li>
+<li>方法：不使蛮力，喜欢使用科学的方法；善于归纳和总结最佳实践和方法；热爱学习、动手和实践，喜欢简法和自动化 </li>
+<li>创新：对很多东西都不能忍，善于思辨和反思，有好奇心，喜欢尝试和折腾</li>
+</ul>
+<h2 id="学习模型"><a href="#学习模型" class="headerlink" title="学习模型"></a>学习模型</h2><ol>
+<li>学习的目的<br>学习不是找答案，而是找到通往答案的方法<br>学习是为了认识原理和本质，一通百通<br>学习是为了打开认知，知道自己不知道</li>
+<li>学习的金字塔模型<br><img src="/images/learning-pyramid.png" alt="学习金字塔模型"><br>讨论、实践、教授给他人属于主动学习，所以我写blog、教别人、做分享等等。</li>
+<li>能力转换模型<br><img src="/images/capability-transform-model.png" alt="能力转换模型"></li>
+<li>我的体会</li>
+</ol>
+<ul>
+<li>挑选知识和信息源——第一手资料非常重要（英文非常重要） </li>
+<li>注意基础和原理——可以忘了形式，但是可以徒手打造出来 </li>
+<li>使用知识图系统的学习——通过知识关联可以进行“顺藤摸瓜” </li>
+<li>举一反三——用不同的方法学同一个东西；学一个东西时把周边的也学了</li>
+<li>总结和归纳；形成框架、套路和方法论</li>
+<li>实践和坚持——实践才能把知识变成技能，坚持才能有沉淀</li>
+<li>如何面对枯燥和硬核的知识——找到应用场景和牛人；补充基础知识；咬牙使劲啃</li>
+<li>其它小技巧——不要记忆；把信息压缩；经常犯错；坚持分享；它山之石可以攻玉 </li>
+</ul>
+<ol start="6">
+<li>Knowledge Sources 知识源 </li>
+</ol>
+<ul>
+<li>Feed Site<ul>
+<li>Reddit/Programming <a target="_blank" rel="noopener" href="https://reddit.com/r/programming/">https://reddit.com/r/programming/</a> </li>
+<li>Hacker News <a target="_blank" rel="noopener" href="https://news.ycombinator.com/">https://news.ycombinator.com/</a> </li>
+<li>Papers l 2 Minute Papers <a target="_blank" rel="noopener" href="https://www.youtube.com/user/keeroyz">https://www.youtube.com/user/keeroyz</a></li>
+<li>The Morning Paper <a target="_blank" rel="noopener" href="https://blog.acolyer.org/">https://blog.acolyer.org/</a> </li>
+<li>Best Paper Awards in Computer Science <a target="_blank" rel="noopener" href="http://jeffhuang.com/best_paper_awards.html">http://jeffhuang.com/best_paper_awards.html</a></li>
+<li>Google Research <a target="_blank" rel="noopener" href="https://research.google/pubs/">https://research.google/pubs/</a> </li>
+<li>Microsoft Research <a target="_blank" rel="noopener" href="http://research.microsoft.com/apps/catalog/default.aspx?t=publications">http://research.microsoft.com/apps/catalog/default.aspx?t=publications</a> l Facebook Research:<a target="_blank" rel="noopener" href="https://research.fb.com/publications/">https://research.fb.com/publications/</a> </li>
+<li>MIT’s Distributed System’s Reading Group <a target="_blank" rel="noopener" href="http://dsrg.pdos.csail.mit.edu/">http://dsrg.pdos.csail.mit.edu/</a> </li>
+<li>arXivPaper Repository <a target="_blank" rel="noopener" href="https://arxiv.org/list/cs/recent">https://arxiv.org/list/cs/recent</a></li>
+<li>Papers We Love <a target="_blank" rel="noopener" href="https://github.com/papers-we-love/papers-we-love">https://github.com/papers-we-love/papers-we-love</a></li>
+</ul>
+</li>
+<li>Engineering Blogs<ul>
+<li>Cloudflare Blog <a target="_blank" rel="noopener" href="https://blog.cloudflare.com/">https://blog.cloudflare.com/</a></li>
+<li>Netflix Blog <a target="_blank" rel="noopener" href="https://netflixtechblog.com/">https://netflixtechblog.com/</a></li>
+<li>Uber Engineering <a target="_blank" rel="noopener" href="https://eng.uber.com/">https://eng.uber.com/</a></li>
+<li>AWS CTO -All Things Distributed <a target="_blank" rel="noopener" href="https://www.allthingsdistributed.com/">https://www.allthingsdistributed.com/</a></li>
+<li>Microsoft -Cloud Design Pattern <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/azure/architecture/patterns/">https://docs.microsoft.com/en-us/azure/architecture/patterns/</a></li>
+<li>AWS Blog <a target="_blank" rel="noopener" href="https://aws.amazon.com/cn/blogs/aws/">https://aws.amazon.com/cn/blogs/aws/</a> </li>
+<li>High Scalability <a target="_blank" rel="noopener" href="http://highscalability.com/">http://highscalability.com/</a> </li>
+<li>RedHat Blog <a target="_blank" rel="noopener" href="https://www.redhat.com/en/blog">https://www.redhat.com/en/blog</a> </li>
+<li>Splunk Blog <a target="_blank" rel="noopener" href="https://www.splunk.com/en_us/blog">https://www.splunk.com/en_us/blog</a> </li>
+<li>Data Bricks Blog <a target="_blank" rel="noopener" href="https://databricks.com/blog/category/engineering">https://databricks.com/blog/category/engineering</a></li>
+<li>Martin Fowler <a target="_blank" rel="noopener" href="https://martinfowler.com/">https://martinfowler.com/</a> </li>
+<li>Hacker Noon <a target="_blank" rel="noopener" href="https://hackernoon.com/">https://hackernoon.com/</a> </li>
+<li>Brendan D. Gregg <a target="_blank" rel="noopener" href="http://www.brendangregg.com/">http://www.brendangregg.com/</a><h2 id="思维模型"><a href="#思维模型" class="headerlink" title="思维模型"></a>思维模型</h2></li>
+</ul>
+</li>
+</ul>
+<ol>
+<li>思考的过程<br><img src="/images/procedure-of-thinking.png" alt="思考的过程"></li>
+<li>近几年的思维模型<br><img src="/images/thinking-model-nowadays.png" alt="思维模型"></li>
+<li>最后几句话<br>如果你和大多数人一样思考行事，你的结局必然和大多数人一样<br>人生就是一个翘翘板！ 你不可能得到所有的东西，要知道自己要什么<br>无论你做什么选择，你都会有得有失！ 多关注自己得到的，而不是失去的！<br>The world is not a fine place but it’s still worth of fighting for<br>坚持做事的高标准，坚持对技术严谨和敬畏的态度，不要妥协！</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/share/" rel="tag"># share</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/viewpoints/why-mask-on-criminals.html" rel="prev" title="为什么要给坏人打马赛克的另类想法">
+                  <i class="fa fa-chevron-left"></i> 为什么要给坏人打马赛克的另类想法
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      const commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Sun Haohao</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
+<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
